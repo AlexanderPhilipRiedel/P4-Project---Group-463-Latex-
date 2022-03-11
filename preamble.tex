@@ -1,0 +1,198 @@
+\usepackage[utf8]{inputenc} % symboler, såsom æøå eller lignende
+\usepackage[danish,english]{babel} % rapportens sprog
+
+%%%% COLOR PACKAGES
+\usepackage[dvipsnames]{xcolor} % For custom colors
+
+\usepackage{tcolorbox} % Color and can makes boxes 
+    \tcbset{nobeforeafter, width= 0mm, boxsep=0mm, left=2mm, right=2mm, height=4mm, colframe=black}
+
+%%%% LINKS PACKAGES
+\usepackage[hidelinks]{hyperref} % interaktive referencer!
+    \hypersetup{
+    breaklinks=true,
+    urlcolor=black,
+    colorlinks=true,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    pdftitle={P3 - Project},
+    }
+
+%%%% PAGE SETUP
+\usepackage[left = 2cm, right = 2cm, bottom = 3cm, top = 2.5cm]{geometry} % Used to adjust the margins
+\usepackage{chngpage} % Cover page
+\usepackage{tocloft} % Table of contents
+    \setcounter{secnumdepth}{3} % The higher the number the more layers of sections can be used
+    \setcounter{tocdepth}{1} % Sets how many layers are shown in the table of contents
+\usepackage{fancyhdr} % Allows for header and footer adjustments
+    \fancyhf{} % Resets the header and footer
+    \fancypagestyle{plain} % Redefines the plain pagestyle
+    {
+        \fancyhf{} % Resetter side hoved og fod
+        \setlength{\headheight}{15pt}
+        \setlength{\voffset}{5pt}
+        \setlength{\textheight}{710pt}
+        \renewcommand{\headrulewidth}{0pt} % Fjerner linjen øverst under sidehovedet
+        \fancyfoot[R]{Page \thepage \ of \pageref{LastPage}} % Viser sidenummeret nederst til højre.
+    }
+\usepackage[compact]{titlesec} % Til brugerdefinerede sidehoveder og kapitel og section formatering
+    \titleformat{\chapter}{\fontsize{25pt}{25pt}\bfseries\color{black}}{{\color{chapterNumColor}\thechapter}}{15pt}{} % sætter fonttypen, skriftstørrelsen og farven på kapitel
+    \titleformat{\part}{\fontsize{40pt}{45pt}\bfseries\centering\color{black}}{{\color{chapterNumColor}\thepart}}{15pt}{}[\thispagestyle{empty}\addtocounter{page}{-1}] % sætter fonttypen, skriftstørrelsen og farven på parts
+    \titlespacing*{\chapter}{0pt}{-50pt}{10pt} 
+    \titlespacing*{\section}{0pt}{10pt}{5pt}
+    \titlespacing*{\subsection}{0pt}{5pt}{0pt}
+    \titlespacing*{\subsubsection}{0pt}{3pt}{-7pt}
+    % Titlespacing: \titlespacing{command}{left spacing}{before spacing}{after spacing}
+    \setlength{\parindent}{0pt} % Indentstørrelse ved ny sektion
+    \setlength{\parskip}{3mm} % Laver mellemrum ved double enter
+\usepackage[style=super, toc, nopostdot, nonumberlist]{glossaries} % Allows for a glossary
+    \renewcommand{\glsnamefont}[1]{\textbf{#1}}
+    \renewcommand{\glsgroupskip}{\vspace{4mm}}
+\usepackage{lastpage} % Allows for the \LastPage command used in the footer
+\usepackage[bottom, marginal]{footmisc} % Footnotes
+
+\usepackage{lscape} % Landscaped page style
+\usepackage{pdflscape} % Landscaped pdf pages
+
+%%%% BIBLIOGRAPHY PACKAGES
+\usepackage[style=numeric, sorting=none, maxbibnames=99, sortcites = true]{biblatex} % Allows for 
+    % Bib resources 
+    \addbibresource{sources/2problem_analysis.bib} 
+    \addbibresource{sources/3requirements.bib}
+    \addbibresource{sources/4solution_proposal.bib}
+    \addbibresource{sources/5modelling.bib}
+    \addbibresource{sources/6Implementation.bib}
+    \addbibresource{sources/7Testing.bib}
+    \addbibresource{sources/8Discussion.bib}
+    
+
+%%%% TEXT SYMBOLS
+\usepackage{textcomp} % flere symboler, såsom €
+\usepackage{fontawesome}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{gensymb}
+
+%%%% FIGURE PACKAGES
+\usepackage{graphicx} % Muliggør brug af figurer
+\usepackage{float} % Muliggør positionering af figurer
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage[font = small, labelfont = bf]{caption}
+    \setlength{\belowcaptionskip}{-5mm} % Sets the vertical distance after a caption
+\usepackage{subcaption} % Used to make two pictures below/beside eachother.
+\usepackage{svg} % To use svg pictures
+\usepackage{pdfpages} % To use pdf pictures
+\usepackage{tikz}
+    \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+    \newcommand{\cmark}{\ding{51}}%
+    \newcommand{\xmark}{\ding{55}}%
+    \newcommand{\crossmark}{\ding{53}}
+
+%%%% TABLE PACKAGES
+\usepackage{tabularx}
+\usepackage{colortbl} % Table colors
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{multicol} % Til at lave 2 ligninger ved siden af hinanden.   
+\usepackage{booktabs} % For at definere /toprule og /midrule
+\usepackage{boldline}
+    \newcolumntype{?}{!{\vrule width 4\arrayrulewidth}} % Laver fed vertikal linje
+    \newcommand{\boldline}{\Xhline{4\arrayrulewidth}} % Laver fed horisontal linje
+    
+    \setlength{\tabcolsep}{1.5mm} % Det horisontale indhak for tekst i tabel
+    \renewcommand{\arraystretch}{1.2} % Den vertikale afstand mellem hver række i tabel
+    
+    %% Custom column types
+    \newcolumntype{M}[1]{m{#1}<{\Centering}} %Kolonnetype med horisontal centrering
+    \newcolumntype{P}[1]{p{#1}<{\Centering}} 
+\usepackage[export]{adjustbox}
+\usepackage{diagbox}
+
+%%%% MATH PACKAGES
+\usepackage{mathtools} % Til at bruge matematiske udtryk eks. SUM tegn.
+\usepackage{mathptmx} % Til brugerdefinerede font størrelser
+\usepackage{mathrsfs}%Til at lave lagrangian "L". 
+\usepackage{amsmath} %Til at skrive vektor (bmatrix). 
+\usepackage{amssymb}%Scale down equations
+\usepackage{leftidx} %Bruges til sub og superscripts til venstre for bogstavet. https://tex.stackexchange.com/questions/30554/superscripts-before-a-letter-in-math
+\usepackage{calc}
+\usepackage{stmaryrd} % Avancerede matematik-udvidelser
+\usepackage{nccmath}
+\usepackage{siunitx} % Flot og konsistent præsentation af tal og enheder med \si{enhed} og \SI{tal}{enhed}
+\sisetup{output-decimal-marker = {,}} % Opsætning af \SI og decimalseparator
+\usepackage[normalem]{ulem} %math
+\usepackage{nicefrac}
+    %% Easier nicefrac command
+    \newcommand{\nfrac}[2]{$\nicefrac{\textrm{#1}}{\textrm{#2}}$}
+\usepackage{xfrac}  
+
+% Dot product
+\makeatletter
+\newcommand*\dotp{\mathpalette\dotp@{.5}}
+\newcommand*\dotp@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%%%% LISTS PACKAGES
+\usepackage{enumitem} % For lists
+    \setlist[itemize]{align=left, leftmargin = 0.9cm, labelsep = -3mm, topsep = 0mm} 
+    \setlist[enumerate]{itemsep = 0mm, topsep = 0mm, labelsep=3mm} 
+    \setlist[description]{style=nextline, leftmargin=*, itemindent = 0mm, labelsep = 0mm, labelindent = 0mm, topsep=-2mm, font=\itshape}
+
+%%% COLOR DEFINES
+\definecolor{aaublue}{RGB}{33,26,82} % Dark blue
+\definecolor{chapterNumColor}{RGB}{150, 150, 150}
+\definecolor{green}{RGB}{41,226,10}
+\definecolor{lightgreen}{RGB}{200,255,101}
+\definecolor{yellow}{RGB}{255,203,32}
+\definecolor{lightred}{RGB}{255,108,100}
+\definecolor{red}{RGB}{255,0,0}
+
+%%%% CODE PACKAGES
+\usepackage{minted}
+    %% Code colors
+    \definecolor{codebg}{rgb}{0.95,0.95,0.95}
+    
+    \newfloat{Snippet}{H}{}[section] % Ikke sikker på hvad den gør
+    
+    \newcommand{\code}[4]{% Generel code setup struktur
+        \begin{Snippet}
+            \centering
+            \inputminted[linenos, framesep=2mm, bgcolor=codebg,fontsize=\footnotesize,baselinestretch=1.2, breaklines]{#1}{#2}
+            \caption{#3}
+            \label{#4}
+        \end{Snippet}
+    }
+    \newcommand{\cpp}[3]{% Short hand c++ snippets
+        \code{cpp}{#1}{#2}{#3}
+    }
+    \newcommand{\matlab}[3]{% Short hand matlab snippets
+        \code{matlab}{#1}{#2}{#3}
+    }
+
+%%%% MISC PACKAGES
+\usepackage{lipsum} % For dummy text
+\usepackage{microtype} % For bedre stretch håndtering og sådan... Generelt bare bedre microtypografi
+
+%%%% MISC DEFINES
+\DeclareFieldFormat{postnote}{p. #1} % ændrer "page" til "s." i kilder ved enkelte sider
+\DeclareFieldFormat{multipostnote}{p. #1} % ændrer "pages" til "s." i kilder ved interval af sider
+\DeclareFieldFormat{url}{\newline\mkbibacro{URL}\addcolon\nobreakspace\url{#1}}
+\urlstyle{same}
+\newcommand{\<}{\textless} % Laver mindre end
+\renewcommand{\>}{\textgreater} % Laver større end
+
+
+
+
+%%% DON'T KNOW %%%
+\usepackage{csquotes} % bruges af babel pakken
+\usepackage{bm}
+\usepackage{rotating}
+\usepackage{dirtytalk}
+\usepackage{pgf-pie}
+\usepackage{pgfplots}
+    \pgfplotsset{compat=1.17}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{makecell}

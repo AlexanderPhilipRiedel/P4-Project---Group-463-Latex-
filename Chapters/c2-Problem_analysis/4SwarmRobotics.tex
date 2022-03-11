@@ -1,0 +1,73 @@
+\section{Multirobot systems}\label{sec:Swarm_Robotics}
+Efficient and fast first response is crucial in the context of search and rescue, in order to quickly rescue potential survivors. Therefore a time efficient solution is significantly desired. A way to increase efficiency in the context of mapping, is to add and coordinate additional robots to cooperatively execute a specific task. These robots are usually physically homogeneous, and is built of the same hardware. 
+
+% Different kinds of multirobot systems exist, some of which are Swarm robotics and distributed robotic systems. Delimiting the definitions to differentiate the notions from each other, to ensure the notions intelligibility when used throughout the report.
+
+% \textbf{Swarm Robots}
+% \textit{The study of designing robot groups that operate without any external infrastructure or centralised control.}
+
+% \textbf{Centralised control of distributed robotic systems}
+
+
+% Lad være med at sætte begreber på, beskriv bare egenskaberne. 
+% Multirobot systems
+
+
+\subsection{Swarm robotics}
+ A key component of swarm robotics is intermediate communication between the robots, which is crucial in order to ensure effective swarm characteristics. These characteristics revolve around the reaction of one robot to the surrounding environment, producing complex swarm behaviours of the whole group. The communication must be quick and stable to ensure a scalable solution. Swarm robots are often decentralised, meaning that all computation, sensing, perception and communication is done locally, on-board the individual robot. The limitations of swarm robotics mainly originate from the deficiencies of modern day intercommunication architectures, hugely complex morphological algorithms, noise, and cost. Although the use of swarm robotics is justified by the main advantages such as adaptability, robustness and scalability. The combination of the above constitute a foundation for defining taxonomy of swarm robotics. \cite{Swarm:SwarmRobotics,Swarm:BehaviourAndApplications}
+ 
+\subsection{Swarm robotic taxonomy}
+The taxonomy of swarm robotics constitute four categories of swarm behaviour, where each category contains several individual swarm robotic behaviours.
+
+\subsubsection{Spatial Organisation}
+This area of behaviours facilitates the possibilities of the robots to spatially organise them selves or objects. 
+\begin{itemize}
+    \item \textbf{Aggregation} congregates the robots spatially to exchange information and even interact with each other.
+    \item \textbf{Pattern formation} arranges the robots in a particular configuration to form a shape of the swarm. This has several use cases, one of which is to form a line to establish multi-hop communication from one robot to another, through intermediate robots.
+    \item \textbf{Self-assembly} structures the robots to work as a greater unit through connections; either physically or virtually through e.g. wireless sensor communication, or virtually establishing a fixed distance between it self and it's neighbours. This facilitates morphological formation characteristics, to evolve into predefined shapes.
+    \item \textbf{Object clustering and assembly} lets the swarm cluster objects through  manipulation. This can be done in a structured way in order for the swarm to achieve assembly skills.
+\end{itemize}
+
+\subsubsection{Navigation}
+Behaviours of navigation allows for coordinated movements of the swarm to navigate through the environment.
+\begin{itemize}
+    \item \textbf{Collective exploration} cooperatively navigates the swarm through an unknown environment to explore it. This is commonly used to search for objects, monitor the environment and get a situational overview. 
+    \item \textbf{Coordinated motion} collectively moving the swarm in a well-defined or arbitrary formation. 
+    \item \textbf{Collective transport} enables the robots to cooperatively convey objects which exceeds the carrying capabilities of the individual robot.
+    \item \textbf{Collective localisation} allows the robots to find their respective positions and orientations relative to the environment or each other. 
+\end{itemize}
+
+\subsubsection{Decision making}
+The ability for the robots in the swarm to make common decisions on solving a given issue.
+\begin{itemize}
+    \item \textbf{Consensus} is the action of when the individual robots converge towards an agreement on a common choice on a given problematic situation.
+    \item \textbf{Task allocation} is dynamically assigning tasks to the individual robots in order to maximise performance of the swarm. This can be done via consensus, and if the individuals are heterogeneous, the tasks my be allocated according to the best fitting robotic capabilities. 
+    \item \textbf{Collective fault detection} is the swarm automatically determining deficiencies of individual robots, by comparing the deviation of expected behaviour to the expected behaviour. 
+    \item \textbf{Collective perception} is the action of combining the locally sensed data into a holistic big picture. This can either be done centralised on a master or decentralised on the individual robots. It allows the robots to cooperatively classify objects, localise and map the environment. 
+    \item \textbf{Synchronisation} aligns frequency and phase of the robots or their emitted sound waves, in order to synchronise the individual robots perception of time. 
+    \item \textbf{Group size regulation} is the action of splitting the swarm up into smaller sub groups, of a desired size, determined either automatically by the robots them selves, or by the user. If the size of the swarm exceeds the desired group size, then it splits up into multiple smaller groups.
+\end{itemize}
+
+\subsubsection{Miscellaneous}
+Additional swarm behaviours which does not fit neither of the categories above. 
+\begin{itemize}
+    \item \textbf{Self-healing} recovers the swarm of individual deficiencies, faults or holistic problems, executed by the individual robots. Allowing for a minimisation of the impact of a single robot failure, which essentially increases robustness. 
+    \item \textbf{Self-reproduction} allows the robots to reproduce and create new robot replicas of them self. This further improves autonomy and eliminating the human engineer. 
+    \item \textbf{Human-swarm interaction} is the way the human user interacts with the swarm through an interface in order to control, and receive the information provided by the swarm. This can happen at a centralised hub locally or even remotely.
+\end{itemize}
+
+As seen there are many different categories of swarm behaviours. Some of them applies to this project better than others. The concepts which have the highest relevance for this project includes:
+\begin{itemize}
+    \item \textbf{Collective exploration}
+    In order to distribute the exploration process, to quickly traverse a larger area.
+    \item \textbf{Collective localisation}
+    In order to efficiently localise the individual robots in the environment, in relation to either the environment or each other. 
+    \item \textbf{Consensus}
+    Is relevant, because the robots should decide where in the environment they should go.
+    \item \textbf{Task allocation}
+    In order to achieve efficient computational distribution, as well as exploration tasks, to increase the intelligence of the system.
+    \item \textbf{Collective perception}
+    As the robots traverse the environment, the perception of the environment is of great significance. Detailed perception means more usable data for the search and rescue team.
+\end{itemize}
+
+As a result there may be many different concepts, which is classed in swarm robotics, however only a few of them applies to this project. This, including the other topics of the problem analysis, are now to be further delimited.

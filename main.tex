@@ -1,0 +1,78 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[title]{appendix}
+\usepackage{array}
+\include{preamble}
+\include{macros}
+\input{formalia/glossary}
+
+
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %For at sætte pagestyle for TOC
+
+%Ny måde at includere filer på
+% \includeonly{
+% formalia/frontpage,
+% formalia/titlepage,
+% formalia/preface,
+% Chapters/c1-Introduction/Call,
+% Chapters/c2-Problem_analysis/Call,
+% Chapters/c3-Requirements/Call,
+% Chapters/c4-Design/Call
+% Chapters/c5-Kinematics/Call,
+% Chapters/c6-Simulation/Call,
+% Chapters/c7-Discussion/Call,
+% Chapters/c8-Conclusion/Call,
+% % Appendices/Call
+% }
+
+
+\begin{document}
+
+%% FRONT MATTER
+\fontfamily{ptm}\selectfont % times font
+\pagenumbering{gobble} %Forcer ingen sidetal før næste \pagenumbering{}
+
+\include{formalia/frontpage}% forside
+\include{formalia/titlepage} % titelside (EN)
+\include{formalia/Preface} %forord
+
+\selectlanguage{english}
+%%%%%
+
+%% Contents
+\tableofcontents
+%%%%%
+\printglossaries %%Displays the glossary
+\thispagestyle{empty}
+
+
+%% MAIN MATTER
+\cleardoublepage
+\pagestyle{plain}
+\pagenumbering{arabic}
+%%%%%
+
+
+\include{Chapters/c1-Introduction/Call}
+\include{Chapters/c2-Problem_analysis/Call}
+\include{Chapters/c3-Requirements/Call}
+\include{Chapters/c4-Solution_Proposal/Call}
+\include{Chapters/c5-Modelling/Call}
+\include{Chapters/c6-Testing/Call}
+\include{Chapters/c7-Discussion/Call}
+\include{Chapters/c8-Conclusion/Call}
+
+
+
+%%Backend
+\Urlmuskip=0mu plus 1mu\relax
+
+\printbibliography[heading=bibintoc, title=Bibliography]
+
+
+%%%% begge disse skal indkommenteres for at få appendicies med
+\appendix
+\input{Appendices/Call}
+
+\newpage
+
+\end{document}

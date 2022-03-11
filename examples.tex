@@ -1,0 +1,91 @@
+%%Examples for reference
+@misc{chapname:refname,
+author          = {Last name, First name middle names and Last name, First name middle names},
+title           = {},
+year            = {},
+note            = {\href{url}{\color{blue}link}},
+addendum        = {Retrieved: }
+}
+
+@article{chapname:refname,
+title       = {},
+journal     = {},
+pages       = {},
+year        = {},
+note        = {\href{DOI-link}{\color{blue}DOI}},
+author      = {},
+addendum    = {Retrieved: }
+}
+
+@book{chapname:refname,
+title       = {},
+author      = {},
+isbn        = {xxx-xx-xxxxxx-x-x},
+year        = {},
+addendum    = {Retrieved:},
+publisher   = {}
+}
+
+%%Example for figures
+\begin{figure}[H]
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+%%Example for enumerated lists
+\begin{itemize}[used for local variable adjustments]
+    \item 
+\end{itemize}
+
+\begin{enumerate}[used for local variable adjustments]
+    \item 
+\end{enumerate}
+
+\begin{description}[used for local variable adjustments]
+    \item[Itemname:]
+\end{description}
+
+%%Example for code
+\cpp{code/test.cpp}{Callback function for \textbf{turtle1}, and the \textbf{t1} and \textbf{t2} subscribers.}{mylabelhere2}
+
+%%Example for table: 
+\begin{table}[]
+    \centering
+    \begin{tabular}{? c | c ?} \boldline
+        cell1 & cell2 \\ \hline
+        cell4 & cell5 \\ \hline
+        cell7 & cell8 \\ \hline 
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+
+
+%%%%%%%%%___Two matrices side by side___%%%%%%%%%
+\noindent\begin{minipage}{0.48\textwidth}
+\begin{equation}
+\prescript{B}{0}{T} =
+    \begin{bmatrix}
+  1    &   0    &   0   &  0.0\\
+  0    &   1    &   0   &  0.0\\
+  0    &   0    &   1   &  330.0\\
+  0    &   0    &   0   &  1
+    \end{bmatrix} \label{eqab}
+\end{equation}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.48\textwidth}
+\begin{equation}
+\prescript{W}{TCP}{T} =
+\begin{bmatrix}
+  0  &   0  &  -1  &  125.3\\
+  1  &   0  &   0  &    0.0\\
+  0  &  -1  &   0  &   11.6\\
+  0  &   0  &   0  &    1
+\end{bmatrix} \label{eqcd}
+\end{equation}
+\end{minipage}
+%%%%%%%%%___Two matrices side by side___%%%%%%%%%
